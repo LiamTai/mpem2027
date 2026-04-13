@@ -1001,7 +1001,7 @@
             <h4>運営事務局</h4>
             <p>伊藤　智哉
               <small>九州大学大学院薬学研究院 生理学分野</small>
-              <small><strong>お問い合わせ：</strong><a href="/cdn-cgi/l/email-protection#04702a6d706b44746c65762a6f7d71776c7129712a65672a6e74"><span class="__cf_email__" data-cfemail="86f2a8eff2e9c6f6eee7f4a8edfff3f5eef3abf3a8e7e5a8ecf6">[email&#160;protected]</span></a></small>
+              <small><strong>お問い合わせ：</strong><span id="contact-email"></span></small>
             </p>
           </div>
         </div>
@@ -1032,13 +1032,9 @@
         <span class="home-sec-num">03</span>
         <h2 class="home-sec-title">大会長挨拶</h2>
       </div>
-      <div class="greeting-block">
-        <p class="greeting-meta">大会長　西田 基宏（九州大学大学院薬学研究院　生理学分野　教授）</p>
-        <p>このたび、第26回大会長として、分子予防環境医学研究会を開催させていただくにあたり、ご挨拶申し上げます。</p>
-        <p>本研究会は2001年から始まり、四半世期にわたって、環境と生体との相互作用がもたらす健康被害・疾患リスクを分子レベルで議論する学術的な交流の場として活動が続いてきました。歴史と伝統のある本研究会を、初めて福岡市（九州大学）で開催できることを大変光栄に感じております。</p>
-        <p>ヒトの健康と様々な環境因子との相互作用を分子レベルから読み解く社会医学は、健康長寿社会の実現を目指す意味でも極めて重要な学問です。福岡県では、2016年に、「人の健康」「動物の健康」「環境の健全性」を一つの健康と捉え、一体的に守っていくワンヘルス（One Health）の理念を認識する段階から実践する段階に進むことを決意した「福岡宣言」が世界に向けて発信されました。本研究会は、まさにワンヘルスの実践に資する学術団体であり、ワンヘルス発信の聖地・福岡で、その基盤となる学術的な議論を深める機会を得たことに心躍らせています。</p>
-        <p>さらに、2026年度の我が国の研究戦略目標の１つとして、「環境と生体との相互作用（エクスポソーム）の理解」が掲げられました。このような背景から、本大会のテーマは「ワンヘルスの実現を見据えた分子予防環境医学」とさせていただきました。本研究会が社会実装可能な予防、そしてワンヘルスの実現に繋がるような、活気あふれる議論の場となることを願っております。さらには、次世代を担う若手研究者や大学院生の皆様が活発な討論と交流を通じて、新しい連携や研究の発展に繋がること期待しています。</p>
-        <p>福岡には地産地消の美味しい食べ物や銘酒が豊富に存在します。これに加えて、九州各地からも海の幸、山の幸が集まってくるため、勉強の後の懇親会も楽しめる街です。皆様には、ぜひ現地にお越しいただき、異分野の先生方との学術的な交流・親睦を深めていただければ幸甚に存じ上げます。どうぞ宜しくお願い申し上げます。</p>
+      <div class="section-card">
+        <p class="section-card-desc">大会長　西田 基宏（九州大学大学院薬学研究院　生理学分野　教授）よりご挨拶を掲載しております。</p>
+        <button class="section-page-btn" onclick="showPage('message')">大会長挨拶はこちらから →</button>
       </div>
     </section>
 
@@ -1420,10 +1416,10 @@
   第26回分子予防環境医学研究会<br>
   The 26th Annual Meeting of the Japanese Society for Molecular Preventive and Environmental Medicine<br>
   2027年2月20日〜21日 ｜ 九州大学馬出キャンパス コラボステーションⅠ 2階視聴覚ホール<br>
-  <a href="/cdn-cgi/l/email-protection#325f42575f0002000572574a535f425e571c515d5f"><span class="__cf_email__" data-cfemail="fa978a9f97c8cac8cdba9f829b978a969fd4999597">[email&#160;protected]</span></a>
+  
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
   function scrollToSection(id) {
     // まずホームページを表示
     showPage('home');
@@ -1462,6 +1458,18 @@
     };
     reader.readAsDataURL(file);
   }
+
+  // Render contact email dynamically to avoid CDN obfuscation
+  (function() {
+    var u = 't.ito'; var d = 'phar.kyushu-u.ac.jp';
+    var el = document.getElementById('contact-email');
+    if (el) {
+      var a = document.createElement('a');
+      a.href = 'mailto:' + u + '@' + d;
+      a.textContent = u + '@' + d;
+      el.appendChild(a);
+    }
+  })();
 
   // Try loading campus photo from same directory
   (function() {
