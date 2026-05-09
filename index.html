@@ -891,6 +891,76 @@
     font-size: 14px;
     margin-bottom: 16px !important;
   }
+
+  /* ===== PROGRAM PAGE ===== */
+  .prog-section {
+    margin-bottom: 40px;
+  }
+  .prog-section-title {
+    font-size: 18px;
+    font-weight: 500;
+    color: var(--wine);
+    border-bottom: 2px solid var(--wine);
+    padding-bottom: 8px;
+    margin-bottom: 20px;
+    letter-spacing: 0.05em;
+  }
+  .prog-lecture-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .prog-lecture-card {
+    background: #fff;
+    border: 0.5px solid var(--border);
+    border-left: 4px solid var(--wine);
+    padding: 18px 22px;
+    transition: box-shadow 0.2s;
+  }
+  .prog-lecture-card:hover {
+    box-shadow: 0 2px 10px rgba(0,100,60,0.08);
+  }
+  .prog-lecture-label {
+    font-size: 11px;
+    font-weight: 500;
+    color: #fff;
+    background: var(--wine);
+    display: inline-block;
+    padding: 2px 10px;
+    border-radius: 2px;
+    letter-spacing: 0.08em;
+    margin-bottom: 10px;
+  }
+  .prog-lecture-title {
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--text);
+    margin-bottom: 10px;
+    line-height: 1.5;
+  }
+  .prog-lecture-speaker {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .prog-speaker-name {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--text);
+  }
+  .prog-speaker-affil {
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.5;
+  }
+  .prog-coming-soon {
+    background: var(--color-background-secondary, #f5f5f5);
+    border: 1px dashed var(--border);
+    padding: 18px 22px;
+    font-size: 14px;
+    color: var(--muted);
+    border-radius: 4px;
+  }
 </style>
 </head>
 <body>
@@ -1016,6 +1086,10 @@
       </div>
       <ul class="news-list">
         <li>
+          <span class="news-date">2026/05/08</span>
+          <span>特別講演の情報を掲載しました。</span>
+        </li>
+        <li>
           <span class="news-date">2026/05/05</span>
           <span>ウェブサイトを公開しました。</span>
         </li>
@@ -1045,12 +1119,7 @@
         <h2 class="home-sec-title">プログラム</h2>
       </div>
       <div class="section-card">
-        <p class="section-card-desc">特別講演・一般演題・シンポジウムなど、2日間にわたるプログラムの詳細を掲載予定です。演題募集終了後、タイムテーブルを公開いたします。</p>
-        <div class="section-card-items">
-          <div class="section-card-item">📅 <strong>1日目：</strong>2027年2月20日（土）</div>
-          <div class="section-card-item">📅 <strong>2日目：</strong>2027年2月21日（日）</div>
-        </div>
-        <div class="section-card-status">🔧 準備中</div>
+        <p class="section-card-desc">特別講演の情報を掲載しました。口頭講演・タイムテーブルは演題募集終了後に順次公開予定です。</p>
         <button class="section-page-btn" onclick="showPage('program')">プログラムページへ →</button>
       </div>
     </section>
@@ -1183,13 +1252,47 @@
 <!-- プログラム -->
 <div id="page-program" class="page">
   <div class="container">
-    <div class="coming-soon-wrap">
-      <div class="coming-soon-icon">📋</div>
-      <h2>プログラム</h2>
-      <p>プログラムは現在準備中です。</p>
-      <p>演題募集終了後、順次掲載予定です。</p>
-      <button class="back-btn" onclick="showPage('home')">← ホームに戻る</button>
+    <div class="page-header-block">
+      <p class="page-eyebrow-small">Program</p>
+      <h2 class="section-heading">プログラム</h2>
     </div>
+
+    <div class="prog-section">
+      <h3 class="prog-section-title">特別講演</h3>
+      <div class="prog-lecture-list">
+
+        <div class="prog-lecture-card">
+          <div class="prog-lecture-label">特別講演①</div>
+          <div class="prog-lecture-title">病理組織像の定量化と微小環境の生物学的解釈（仮）</div>
+          <div class="prog-lecture-speaker">
+            <span class="prog-speaker-name">石川 俊平 先生</span>
+            <span class="prog-speaker-affil">東京大学 大学院医学系研究科 衛生学分野 ／ 国立がん研究センター 先端医療開発センター 臨床腫瘍病理分野</span>
+          </div>
+        </div>
+
+        <div class="prog-lecture-card">
+          <div class="prog-lecture-label">特別講演②</div>
+          <div class="prog-lecture-title">レドックス細胞死の制御と破綻（仮）</div>
+          <div class="prog-lecture-speaker">
+            <span class="prog-speaker-name">三島 英換 先生</span>
+            <span class="prog-speaker-affil">東北大学大学院医学系研究科　環境医学分野</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <div class="prog-section">
+      <h3 class="prog-section-title">口頭講演</h3>
+      <div class="prog-coming-soon">🔧 準備中 — 演題募集終了後に掲載予定です</div>
+    </div>
+
+    <div class="prog-section">
+      <h3 class="prog-section-title">タイムテーブル</h3>
+      <div class="prog-coming-soon">🔧 準備中 — 演題募集終了後に掲載予定です</div>
+    </div>
+
+    <button class="back-btn" onclick="showPage('home')" style="margin-top:32px;">← ホームに戻る</button>
   </div>
 </div>
 
